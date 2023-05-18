@@ -42,7 +42,7 @@
         </ul>
       </li>
       <li>
-        <a href="#configuration-server">Configuration Servers</a>
+        <a href="#configuration-servers">Configuration Servers</a>
         <ul>
           <li>
             <a href="#windows-server-2019">Windows Server 2019</a>
@@ -77,17 +77,24 @@ PFsense
 
 Router
 
-|Router|Inteface|            IP|CIDR|  Vlan|      Link to|
-|:-----|-------:|-------------:|---:|-----:|------------:|
-|R1    |  F0/0/0|    10.0.0.241|  24|Vlan 1|      PFsense|
-|R1    |    F0/0|-------------:|  24|      |           R2|
-|R1    |    F0/1|192.168.10.254|  24|      |           R3|
-|------|--------|--------------|----|------|-------------|
-|R2    |    F0/0|-------------:|  24|      |           R1|
-|R2    |    F0/0|-------------:|  24|      |           R3|
-|------|--------|--------------|----|------|-------------|
-|R3    |    F0/0|-------------:|  24|      |           R1|
-|R3    |    F0/0|-------------:|  24|      |           R2|
+|Router|Inteface|            IP|CIDR|   Vlan|      Link to|
+|:-----|-------:|-------------:|---:|------:|------------:|
+|R1    |  F0/0/0|   000 Vlan 20|  24|Vlan 20|      PFsense|
+|R1    |    F0/0|    10.0.2.254|  24|       |           R3|
+|R1    |    F0/1|    10.0.1.254|  24|       |           R2|
+|------|--------|--------------|----|-------|-------------|
+|R2    |    F0/0|    10.0.1.253|  24|       |           R1|
+|R2    |    F0/0|    10.0.3.254|  24|       |           R3|
+|------|--------|--------------|----|-------|-------------|
+|R3    |    F0/0|    10.0.2.253|  24|       |           R1|
+|R3    |    F0/1|    10.0.3.253|  24|       |           R2|
+
+Vlan
+
+|VLAN   |      Service|              IP|  Port|
+|:------|------------:|---------------:|-----:|
+|Vlan 20|        Admin|      10.0.0.242|f0/0/0|
+|       |             |                |      |
 
 <p align="right">{<a href="#haut-de-page">Haut de page</a>}</p>
 
@@ -106,12 +113,14 @@ Router
 
 #### Router R1
 
-- [ ] hostname
+- [x] hostname
 - [ ] ip route
 - interface :
   - [ ] FastEthernet 0/0/0
   - [ ] FastEthernet 0/0
   - [ ] FastEthernet 0/1
+- Vlan :
+  - [ ] Vlan
 - connexion distante :
   - [ ] console
   - [ ] telnet
@@ -154,5 +163,17 @@ Router
 ### Cataclyst 2950
 
 ### Allied
+
+<p align="right">{<a href="#haut-de-page">Haut de page</a>}</p>
+
+## Configuration Servers
+
+### Windows Server 2019
+
+#### Master
+
+### Deban
+
+#### GLPI-OCS
 
 <p align="right">{<a href="#haut-de-page">Haut de page</a>}</p>
