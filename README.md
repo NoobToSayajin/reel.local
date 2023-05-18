@@ -96,6 +96,12 @@ Vlan
 |Vlan 20|        Admin|      10.0.0.242|f0/0/0|
 |       |             |                |      |
 
+Switch
+
+|Switch|Inteface|            IP|CIDR|   Vlan|      Link to|
+|:-----|-------:|-------------:|---:|------:|------------:|
+|Allied|  Vlan 1|      10.0.0.1|    |       |             |
+
 <p align="right">{<a href="#haut-de-page">Haut de page</a>}</p>
 
 ## Projet Reel
